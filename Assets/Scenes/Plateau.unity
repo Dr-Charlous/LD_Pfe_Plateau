@@ -1245,6 +1245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1627841654}
+  - component: {fileID: 1627841655}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1268,6 +1269,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1627841655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627841653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec27157dc182b1449c8aaf3dd8ece9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCube: {fileID: 8114182319088707196}
+  Done: []
+  Iterations: 5
 --- !u!1 &1860536888
 GameObject:
   m_ObjectHideFlags: 0
@@ -3790,12 +3806,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
-  Neighbors: []
-  Done: []
+  Neighbors:
+  - {fileID: 7138146793664007551}
+  - {fileID: 5442344331514999048}
+  - {fileID: 3020681493583111351}
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &2287249001395606538
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3879,12 +3899,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &2365407591457089333
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4560,12 +4581,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &3163061767272546640
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4743,12 +4765,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &3201522104483438401
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5152,12 +5175,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &3651487220415848678
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5601,12 +5625,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &4116278406343163775
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5907,12 +5932,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &4449589756200225732
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6128,12 +6154,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &4666450989335002715
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6353,12 +6380,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &4865486869568204423
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6492,12 +6520,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &4922029119792859100
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6554,12 +6583,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &4973823394020808335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6655,12 +6685,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &5017114717631760106
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6729,12 +6760,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &5144682812073612164
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6846,12 +6878,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &5225901160189533343
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7049,12 +7082,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &5421695676356556544
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7202,12 +7236,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
-  Neighbors: []
-  Done: []
+  Neighbors:
+  - {fileID: 7424786760406742321}
+  - {fileID: 7480581460001077750}
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &5753546341039946646
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7353,12 +7390,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &5887157177702177432
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7447,12 +7485,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &5950931832214870347
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7537,12 +7576,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &6051131323184042601
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7638,12 +7678,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &6076852435304011980
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7804,12 +7845,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &6137803466326178327
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7885,12 +7927,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &6138113095250766497
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7977,12 +8020,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &6190049019442776825
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8182,12 +8226,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
-  Neighbors: []
-  Done: []
+  Neighbors:
+  - {fileID: 5442344331514999048}
+  - {fileID: 4366122674284061293}
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &6366779166107678780
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8236,12 +8283,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &6379008458468728837
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8317,12 +8365,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
-  Neighbors: []
-  Done: []
+  Neighbors:
+  - {fileID: 2287249001395606536}
+  - {fileID: 7424786760406742321}
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &6402679758403059893
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8540,12 +8591,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &6728017918160347094
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8594,12 +8646,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &6776411526269337478
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8668,12 +8721,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &6823576954859823997
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8787,12 +8841,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &6928907836375679626
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8884,12 +8939,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7019109897602022707
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8965,12 +9021,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7042904518284797987
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9088,12 +9145,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7127739499497986534
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9219,12 +9277,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
-  Neighbors: []
-  Done: []
+  Neighbors:
+  - {fileID: 5600970836697035932}
+  - {fileID: 2835001959998212386}
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7299651788018516582
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9266,12 +9327,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7331066118860256390
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9325,12 +9387,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7339398095975253436
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9387,12 +9450,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7467262877537967826
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9449,12 +9513,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7494954245147552692
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9496,12 +9561,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7501040509374626132
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9543,12 +9609,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7508673916976698156
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9624,12 +9691,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7510082436202840939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9698,12 +9766,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7548913386695158438
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9757,12 +9826,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7550415224976883592
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9816,12 +9886,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7651080107893692365
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9875,12 +9946,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7687408698216263610
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9949,12 +10021,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7724085513255446650
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9996,12 +10069,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7784011516909346670
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10055,12 +10129,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
-  Neighbors: []
-  Done: []
+  Neighbors:
+  - {fileID: 2287249001395606536}
+  - {fileID: 5600970836697035932}
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7785317034777350978
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10152,12 +10229,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7830153579317451490
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10233,12 +10311,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7836107741262406071
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10300,12 +10379,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7880398109660547833
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10354,12 +10434,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7892698992821839693
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10408,12 +10489,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7923347868304031608
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10489,12 +10571,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &7923386973489337642
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10640,12 +10723,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8063904198072452344
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10687,12 +10771,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8084739370307485118
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10768,12 +10853,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8102084386982369707
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10827,12 +10913,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
-  Neighbors: []
-  Done: []
+  Neighbors:
+  - {fileID: 2287249001395606536}
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8114182319088707197
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10963,12 +11051,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8350627738962414228
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11010,12 +11099,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8371124816032590582
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11057,12 +11147,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8400600460028362953
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11116,12 +11207,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8447240716914507161
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11175,12 +11267,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8447304981264525239
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11234,12 +11327,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8501538474208485219
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11288,12 +11382,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8510187391325124453
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11347,12 +11442,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8536308226826128248
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11394,12 +11490,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8609467001517506937
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11448,12 +11545,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8661478185280200084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11537,12 +11635,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
-  Neighbors: []
-  Done: []
+  Neighbors:
+  - {fileID: 3020681493583111351}
+  - {fileID: 1933197859515441087}
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8674624985613657179
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11584,12 +11685,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8698720699610750716
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11688,12 +11790,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8759512985252243829
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11762,12 +11865,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8842640120631209556
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11816,12 +11920,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8852664700899479523
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11863,12 +11968,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8861660084829791156
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11910,12 +12016,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
-  Neighbors: []
-  Done: []
+  Neighbors:
+  - {fileID: 1933197859515441087}
+  - {fileID: 6151497504833042795}
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8919161348238077329
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11964,12 +12073,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &8974006774152369588
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12018,12 +12128,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &9069643905819271977
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12099,12 +12210,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
-  Neighbors: []
-  Done: []
+  Neighbors:
+  - {fileID: 4366122674284061293}
+  - {fileID: 6151497504833042795}
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &9073314533571388555
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12164,12 +12278,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &9148768998867648647
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12218,12 +12333,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52e956be0ae71d489fdc11b74b97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 307854478}
   Position: {x: 0, y: 0, z: 0}
   Offset: {x: 0, y: 1, z: 0}
   Neighbors: []
-  Done: []
   Previous: {fileID: 0}
   Player: {fileID: 1627841653}
+  IsInWay: 0
 --- !u!65 &9191900290930908562
 BoxCollider:
   m_ObjectHideFlags: 0

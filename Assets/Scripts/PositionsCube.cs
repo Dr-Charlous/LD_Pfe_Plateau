@@ -3,84 +3,107 @@ using System.Collections.Generic;
 using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
+using DG.Tweening;
 
 public class PositionsCube : MonoBehaviour
 {
+    public GameManager GameManager;
     public Vector3 Position;
     public Vector3 Offset;
-    public PositionsCube[] Neighbors;
-    public List<PositionsCube> Done;
+    public Transform[] Neighbors;
     public PositionsCube Previous;
     public GameObject Player;
+    public bool IsInWay = false;
 
     private void OnMouseDown()
     {
+        transform.DOLocalMoveY(transform.localPosition.y - 0.1f, 0.1f).SetLoops(2, LoopType.Yoyo);
+        Player.GetComponent<Player>().Done.Clear();
+        Player.GetComponent<Player>().Iterations = 0;
+        IsInWay = false;
 
-        //Done.Clear();
+        if (FindCude(Player.GetComponent<Player>().CurrentCube, this) && Player.GetComponent<Player>().Iterations <= GameManager.Dice1.DiceValue + GameManager.Dice2.DiceValue)
+        {
+            IsInWay = true;
 
-        //if (FindPath(Player.GetComponent<Player>().positionsCube, this))
-        //{
-        //    List<PositionsCube> path = GetPath(this);
+            List<PositionsCube> path = GetPath(this);
 
-        //    Vector3 from = Position + Offset;
+            DG.Tweening.Sequence sequence = DOTween.Sequence();
 
-        //    for (int i = 0; i < path.Count; i++)
-        //    {
-        //        PositionsCube tile = path[i];
+            Vector3 from = Player.GetComponent<Player>().CurrentCube.transform.position + Player.GetComponent<Player>().CurrentCube.Offset;
 
-        //        Vector3 destination = tile.transform.position + tile.Offset;
-        //        Player.transform.position = destination;
-        //    }
+            for (int i = 0; i < path.Count; i++)
+            {
+                PositionsCube cube = path[i];
 
-        //    MoveEnd();
+                Vector3 destination = cube.transform.position + cube.Offset;
+                sequence.Append(Player.transform.DOMove(destination, 1.0f).SetEase(Ease.Linear));
 
-        //    foreach (var tile in path)
-        //    {
-        //        tile.Previous = null;
-        //    }
-        //}
+                if (i > 0)
+                    from = path[i - 1].transform.position + path[i - 1].Offset;
 
-        Player.transform.position = transform.position + Offset;
+                Vector3 direction = destination - from;
+                direction.Normalize();
+
+                sequence.Join(Player.transform.DORotateQuaternion(Quaternion.LookRotation(-direction, Vector3.up), 0.3f));
+            }
+
+            sequence.AppendCallback(MoveEnd);
+
+            foreach (var cube in path)
+            {
+                cube.Previous = null;
+            }
+        }
     }
 
-    //void MoveEnd()
-    //{
-    //    Player.GetComponent<Player>().positionsCube = this;
-    //}
+    bool FindCude(PositionsCube startCube, PositionsCube endCube)
+    {
+        if (startCube == endCube)
+            return true;
 
-    //bool FindPath(PositionsCube start, PositionsCube end)
-    //{
-    //    if (start == end)
-    //        return true;
+        Player.GetComponent<Player>().Done.Add(startCube);
 
-    //    Done.Add(start);
+        for (int i = 0; i < startCube.Neighbors.Length; i++)
+        {
+            if (!Player.GetComponent<Player>().Done.Contains(Neighbors[i].GetComponent<PositionsCube>()) && (Neighbors[i].GetComponent<PositionsCube>().FindCude(Neighbors[i].GetComponent<PositionsCube>(), endCube)))
+            {
+                Neighbors[i].GetComponent<PositionsCube>().Previous = startCube;
+                Player.GetComponent<Player>().Iterations++;
+                return true;
+            }
+        }
 
-    //    foreach (var item in start.Neighbors)
-    //    {
-    //        if (Done.Contains(item) == false && FindPath(item, end))
-    //        {
-    //            item.Previous = start;
+        return false;
+    }
 
-    //            return true;
-    //        }
-    //    }
+    List<PositionsCube> GetPath(PositionsCube lastCube)
+    {
+        List<PositionsCube> path = new List<PositionsCube>();
 
-    //    return false;
-    //}
+        PositionsCube current = lastCube;
+        while (current != null)
+        {
+            path.Insert(0, current);
+            current = current.Previous;
+        }
 
-    //List<PositionsCube> GetPath(PositionsCube lastTile)
-    //{
-    //    List<PositionsCube> path = new List<PositionsCube>();
+        path.RemoveAt(0);
+        return path;
+    }
 
-    //    PositionsCube current = lastTile;
-    //    while (current != null)
-    //    {
-    //        path.Insert(0, current);
-    //        current = current.Previous;
-    //    }
+    void MoveEnd()
+    {
+        Player.GetComponent<Player>().CurrentCube = this;
+    }
 
-    //    path.RemoveAt(0);
-
-    //    return path;
-    //}
+    private void OnDrawGizmos()
+    {
+        for (int i = 0; i < Neighbors.Length; i++)
+        {
+            Debug.DrawLine(transform.position + Offset, Neighbors[i].position + Neighbors[i].GetComponent<PositionsCube>().Offset, Color.red);
+        }
+        if (IsInWay)
+            Debug.DrawLine(transform.position, transform.position + transform.right, Color.green);
+    }
 }

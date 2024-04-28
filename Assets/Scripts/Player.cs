@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public PositionsCube positionsCube;
+    public PositionsCube CurrentCube;
+    public List<PositionsCube> Done;
+    public int Iterations;
 }
